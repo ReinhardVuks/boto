@@ -15,7 +15,7 @@ function dbconnect(){
     	echo "New record created successfully";
     	echo mysql_query($sql);
     	echo "jaaaaaaaaaaa";
-    	while($row = mysql_fetch_assoc(mysql_query($sql))) {
+    	while($row = mysql_fetch_array(mysql_query($sql))) {
     		echo "jama";
     	}
 	} 
