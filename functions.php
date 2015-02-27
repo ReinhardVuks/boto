@@ -1,5 +1,4 @@
 <?php
-echo 'juut';
 function dbconnect(){
 	$servername="eu-cdbr-azure-north-b.cloudapp.net";
 	$username="be6bf743499900";
@@ -11,16 +10,10 @@ function dbconnect(){
 	if($conn->connect_error){
     	die("connection failed:" . $conn->connect_error);
 	}
-	echo 'juut';
 	$sql="SELECT * FROM user";
 	if ($conn->query($sql)) {
-		echo 'juut';
-		echo mysql_fetch_assoc(mysql_query($sql);
-    	while($row=mysql_fetch_assoc(mysql_query($sql))){
-    		echo $row['firstname'];
-    	}
+    	echo "New record created successfully";
 	} 
-
 	else {
 	    echo "Error: " . $sql . "<br>" . $conn->error;
 	}
