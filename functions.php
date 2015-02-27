@@ -14,7 +14,7 @@ function dbconnect(){
 	if ($conn->query($sql)) {
 
     	while($row=mysql_fetch_assoc(mysql_query($sql))){
-    		echo print_r($row);
+    		print_r($row);
     	}
 	} 
 
