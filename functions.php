@@ -15,6 +15,9 @@ function dbconnect(){
     	echo "New record created successfully";
     	echo mysql_query($sql);
     	echo "jaaaaaaaaaaa";
+    	while($row = mysql_fetch_assoc(mysql_query($sql))) {
+    		echo "jama";
+    	}
 	} 
 	else {
 	    echo "Error: " . $sql . "<br>" . $conn->error;
