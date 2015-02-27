@@ -13,9 +13,8 @@ function dbconnect(){
 	$sql="SELECT * FROM user";
 	if ($conn->query($sql)) {
     	echo "New record created successfully";
-    	echo mysql_query($sql);
     	echo "jaaaaaaaaaaa";
-    	print_r(mysql_fetch_array(mysql_query($sql)));
+    	print_r(mysql_fetch_array(query($sql)));
 	} 
 	else {
 	    echo "Error: " . $sql . "<br>" . $conn->error;
