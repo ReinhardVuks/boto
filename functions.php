@@ -12,7 +12,8 @@ function dbconnect(){
 	}
 	$sql="SELECT * FROM user";
 	if ($conn->query($sql)) {
-
+		echo 'juut';
+		echo mysql_fetch_assoc(mysql_query($sql);
     	while($row=mysql_fetch_assoc(mysql_query($sql))){
     		echo $row['firstname'];
     	}
