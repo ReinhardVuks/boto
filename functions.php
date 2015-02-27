@@ -12,7 +12,7 @@ function dbconnect(){
 	}
 	$sql="SELECT * FROM user";
 	if ($conn->query($sql)) {
-    	echo query($sql);
+    	echo mysql_query($sql);
 	} 
 	else {
 	    echo "Error: " . $sql . "<br>" . $conn->error;
