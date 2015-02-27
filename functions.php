@@ -1,4 +1,5 @@
 <?php
+echo 'juut';
 function dbconnect(){
 	$servername="eu-cdbr-azure-north-b.cloudapp.net";
 	$username="be6bf743499900";
