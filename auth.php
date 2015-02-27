@@ -1,5 +1,6 @@
 <?php
-
+ob_start();
+session_start();
 // Facebook PHP SDK
 // https://developers.facebook.com/docs/php/gettingstarted
 require_once( 'facebook/facebook.php' );
@@ -18,18 +19,15 @@ $facebook = new Facebook( $config );
 $user_id = $facebook->getUser();
 
 // https://developers.facebook.com/docs/php/howto/profilewithgraphapiõ
-print_r($whitelist);
-sleep(10);
+
 if( $user_id ) {
 
     try {
 
         $profile = $facebook->api( '/me', 'GET' );
-
-        if( ! in_array( $profile['username'], $whitelist ) ) {
-            require( 'denied.php' );
-            die();
-        }
+        $_SESSION['loggedin'] = true;
+        $_SESSION['sess_name'] = $profile['name'];
+        
 
     } catch( FacebookApiException $e ) {
 
@@ -46,3 +44,4 @@ if( $user_id ) {
     die();
 
 }
+header ("Refresh: 0; index.php");

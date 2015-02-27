@@ -1,0 +1,14 @@
+
+2011.08.31
+
+* Added sample configuration blocks to ocspcheck.php to demonstrate, how ocsp request is made against test-OCSP (openxades OCSP) 
+service to check the status of the certificates issued from "ESTEID-SK 2007" or "ESTEID-SK 2011" CA-s
+
+2011.07.20
+
+* Translated labels and comments into english
+
+
+2011.04.26
+
+* New certificates ("EE Certification Centre Root CA", "EID-SK 2011", "ESTEID-SK 2011", "SK OCSP RESPONDER 2011", "TEST of EE Certification Centre Root CA", "TEST of ESTEID-SK 2011", "TEST of SK OCSP RESPONDER 2011") added and ocspcheck.php configured to work with new certificates.

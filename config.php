@@ -6,6 +6,9 @@ define( 'SECRET', 'e248bba7fba48375a683207df8380838' );
 $whitelist = array( 
  'reinhard.vuks',
  'gerrerth.kaur',
+ 'Reinhard Vuks',
+ 'Gerrerth Kaur',
+ 'Olev Abel'
  );
 //whitelist peab siis sisaldama soovitud kasutajate fb username'sid.
 define( 'LOGOUT_REDIRECT', 'index.php' );
