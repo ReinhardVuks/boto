@@ -14,7 +14,7 @@ function dbconnect(){
 	if ($conn->query($sql)) {
 
     	while($row=mysql_fetch_assoc(mysql_query($sql))){
-    		print_r($row);
+    		echo $row['firstname'];
     	}
 	} 
 
