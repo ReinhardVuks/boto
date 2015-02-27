@@ -23,7 +23,7 @@ if( $user_id ) {
     try {
 
         $profile = $facebook->api( '/me', 'GET' );
-
+        console.log($whitelist);
         if( ! in_array( $profile['username'], $whitelist ) ) {
             require( 'denied.php' );
             die();
