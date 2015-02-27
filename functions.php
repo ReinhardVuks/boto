@@ -12,8 +12,12 @@ function dbconnect(){
 	}
 	$sql="SELECT * FROM user";
 	if ($conn->query($sql)) {
-    	echo mysql_query($sql);
+
+    	while($row=mysql_fetch_assoc(mysql_query($sql))){
+    		echo print_r($row);
+    	}
 	} 
+
 	else {
 	    echo "Error: " . $sql . "<br>" . $conn->error;
 	}
