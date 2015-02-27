@@ -10,6 +10,7 @@ function dbconnect(){
 	if($conn->connect_error){
     	die("connection failed:" . $conn->connect_error);
 	}
+	echo 'juut';
 	$sql="SELECT * FROM user";
 	if ($conn->query($sql)) {
 		echo 'juut';
