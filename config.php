@@ -1,7 +1,7 @@
 <?php
 // Facebook API
-define( 'APP_ID', '1407120086205899' );
-define( 'SECRET', '0ae07061c9c8790c8206fbcc82cb5ebf' );
+define( 'APP_ID', '798278950247333' );
+define( 'SECRET', 'e248bba7fba48375a683207df8380838' );
 // User whitelist
 $whitelist = array( 
  'reinhard.vuks',

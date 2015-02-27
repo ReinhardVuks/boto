@@ -9,8 +9,8 @@ require_once( 'config.php' );
 
 // https://developers.facebook.com/apps/
 $config = array(
-    'appId' => '1407120086205899',
-    'secret' => '0ae07061c9c8790c8206fbcc82cb5ebf',
+    'appId' => '798278950247333',
+    'secret' => 'e248bba7fba48375a683207df8380838',
     'allowSignedRequest' => false
 );
 
