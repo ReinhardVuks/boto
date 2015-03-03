@@ -1,6 +1,8 @@
 <?php
 ob_start();
 session_start();
+
+include 'functions.php';
 // Facebook PHP SDK
 // https://developers.facebook.com/docs/php/gettingstarted
 require_once( 'facebook/facebook.php' );
@@ -18,7 +20,7 @@ $config = array(
 $facebook = new Facebook( $config );
 $user_id = $facebook->getUser();
 
-// https://developers.facebook.com/docs/php/howto/profilewithgraphapiõ
+// https://developers.facebook.com/docs/php/howto/profilewithgraphapi
 
 if( $user_id ) {
 
@@ -27,7 +29,9 @@ if( $user_id ) {
         $profile = $facebook->api( '/me', 'GET' );
         $_SESSION['loggedin'] = true;
         $_SESSION['sess_name'] = $profile['name'];
-        
+        if (!checkIfFBUserExists($profile['id'])) {
+            addUserFB($profile['first_name'], $profile['last_name'], $profile['id']);
+        }
 
     } catch( FacebookApiException $e ) {
 
