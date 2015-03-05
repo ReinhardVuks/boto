@@ -21,13 +21,13 @@ session_start();
                 <ul>
                     <?php
                     if($_SESSION['loggedin']){
-                     echo '<li><a>Welcome,';
+                     echo '<li><a>Welcome, ';
                      echo $_SESSION["sess_name"];
                      echo '</a></li>';
                      echo '<li><a href="logout.php">Logi välja</a></li>';
                     } else {
                         echo '<li><a href="login.php">Logi sisse</a></li>
-                              <li><a href="#">Registreeru</a></li>';
+                              <li><a href="register.php">Registreeru</a></li>';
                     }
                     ?>
                 </ul>

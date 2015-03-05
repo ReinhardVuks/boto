@@ -33,7 +33,7 @@ function addUser($fname, $lname, $email, $pass) {
 	$sql = "INSERT INTO user (firstname, lastname, email, pass) 
 		VALUES ('$fname', '$lname', '$email', '$pass')";
 	if ($conn->query($sql)) {
-    	echo "New record created successfully";
+    	header("Location: login.php?msg=User was created successfully. You can now login.");
 	} else {
     	echo "Error: " . $sql . "<br>" . $conn->error;
 	}
@@ -59,6 +59,55 @@ function checkIfFBUserExists($fb_id) {
 	        if ($row['bool'] == 1) return true;
 	        return false;
     	} 
+	}
+}
+
+// Register
+
+function checkEmail() {
+	if(isset($_POST['email'])) {
+	    $conn = dbconnect();
+	    $email = $_POST['email'];
+	    $sql="SELECT * FROM user WHERE email = '$email'";
+	    $result = $conn->query($sql);
+	    if ($result->num_rows > 0) {
+	        echo "<span style='color:red;'>Already exist</span>";
+	        return false;
+	    } else {
+	        echo "<span style='color:green;'>Available</span>";
+	        return true;
+	    }
+	}
+}
+
+function lengthControl($fname, $lname, $email, $password) {
+	if (strlen($email) < 1) {
+		header("Location: register.php?msg=Email field was left empty.");
+		return false;
+	} elseif (strlen($fname) < 1) {
+		header("Location: register.php?msg=First name field was left empty.");
+		return false;
+	} elseif (strlen($lname) < 1) {
+		header("Location: register.php?msg=Last name field was left empty.");
+		return false;
+	} elseif (strlen($password) < 1) {
+		header("Location: register.php?msg=Password field was left empty.");
+		return false;
+	}
+	return true;
+}
+
+function registering() {
+	$fname = $_POST['fname'];
+	$lname = $_POST['lname'];
+	$email = $_POST['email'];
+	$password = $_POST['password'];
+	if (lengthControl($fname, $lname, $email, $password)) {
+		if (checkEmail()) {
+		    addUser($_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['password']);
+		} else {
+		    header("Location: register.php?msg=User with the given email already exists.");
+		}
 	}
 }
 
