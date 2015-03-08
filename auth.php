@@ -3,6 +3,7 @@ ob_start();
 session_start();
 <hidden name="redirurl" value="<? echo $_SERVER['HTTP_REFERER']; ?>" />
 
+
 include 'functions.php';
 // Facebook PHP SDK
 // https://developers.facebook.com/docs/php/gettingstarted

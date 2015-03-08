@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+
 <?php
 $_SESSION['url']=$_SERVER['REQUEST URI'];
 ?>
+
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -18,11 +20,11 @@ $_SESSION['url']=$_SERVER['REQUEST URI'];
 	    <div class="register">
             <?php
             echo '<li><a href="login.php">Logi sisse</a></li>';
-            ?>
+            if($_GET['msg']) {
+                echo $_GET['msg'];
             <?php
             if($_GET['msg']) {
                 echo $_GET['msg'];
-
             }
             ?>
             <form id='register-form' action='register_action.php' method='post' accept-charset='UTF-8'>

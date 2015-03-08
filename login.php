@@ -13,8 +13,8 @@ require_once( 'auth.php' );
     </head>
     <body>
         <div class="login">
-        <?php if($_GET['msg']) { echo $_GET['msg']; } ?>
-	    
+            <?php if($_GET['msg']) { echo $_GET['msg']; } ?>
+	   <div class="login">
             <?php echo '<a href="' . $login_url . '"><img src="images/fb_login.png"></a>';?>
         </div>
     </body>
