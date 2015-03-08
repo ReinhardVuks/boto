@@ -12,10 +12,8 @@ require_once( 'auth.php' );
         <title>BOTO</title>
     </head>
     <body>
-        <div class="login">
-        <?php if($_GET['msg']) { echo $_GET['msg']; } ?>
-	    
-            <?php echo '<a href="' . $login_url . '"><img src="images/fb_login.png"></a>';?>
-        </div>
+	    <div class="login">
+           <?php echo '<a href="' . $login_url . '">LOGIN</a>';?>
+    </div>
     </body>
 </html>
