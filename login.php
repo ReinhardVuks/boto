@@ -1,7 +1,5 @@
+<?php require_once( 'auth.php' ); ?>
 <!DOCTYPE html>
-<?php
-require_once( 'auth.php' );
-?>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -13,9 +11,11 @@ require_once( 'auth.php' );
     </head>
     <body>
         <div class="login">
-            <?php if($_GET['msg']) { echo $_GET['msg']; } ?>
-	   <div class="login">
-            <?php echo '<a href="' . $login_url . '"><img src="images/fb_login.png"></a>';?>
+            <?php if($_GET['msg']) { 
+                echo '<span>' . $_GET["msg"] . '<span>';
+            };
+                echo '<a href="' . $login_url . '"><img src="images/fb_login.png" alt="Facebook login"/></a>';
+            ?>
         </div>
     </body>
 </html>

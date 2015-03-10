@@ -1,16 +1,11 @@
 <?php
 ob_start();
 session_start();
-<hidden name="redirurl" value="<? echo $_SERVER['HTTP_REFERER']; ?>" />
 
-
-include 'functions.php';
+include('functions.php');
 // Facebook PHP SDK
 // https://developers.facebook.com/docs/php/gettingstarted
 require_once( 'facebook/facebook.php' );
-
-// Configuration
-require_once( 'config.php' );
 
 // https://developers.facebook.com/apps/
 $config = array(
@@ -50,4 +45,4 @@ if( $user_id ) {
     die();
 
 }
-header ("Refresh: 0; redirurl");
+header ("Refresh: 0; index.php");

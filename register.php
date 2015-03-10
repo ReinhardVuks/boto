@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 
-<?php
-$_SESSION['url']=$_SERVER['REQUEST URI'];
-?>
-
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -19,29 +15,25 @@ $_SESSION['url']=$_SERVER['REQUEST URI'];
     <body>
 	    <div class="register">
             <?php
-            echo '<li><a href="login.php">Logi sisse</a></li>';
-            if($_GET['msg']) {
-                echo $_GET['msg'];
-            <?php
-            if($_GET['msg']) {
-                echo $_GET['msg'];
-            }
+            if($_GET['msg']) { 
+                echo '<span>' . $_GET["msg"] . '<span>';
+            };
             ?>
             <form id='register-form' action='register_action.php' method='post' accept-charset='UTF-8'>
                 <input type='hidden' name='submitted' id='submitted' value='1'/>
 
-                <label for='email'>Email</label>
+                <label>Email</label>
                 <input type='text' name='email' id='email' maxlength="50" />
 
                 <div id="valid"></div>
 
-                <label for='name'>Firstname</label>
+                <label>Firstname</label>
                 <input type='text' name='fname' id='fname' maxlength="50" />
 
-                <label for='name'>Lastname</label>
+                <label>Lastname</label>
                 <input type='text' name='lname' id='lname' maxlength="50" />
                  
-                <label for='password'>Password</label>
+                <label>Password</label>
                 <input type='password' name='password' id='password' maxlength="50" />
                 <input type='submit' name='Submit' value='Submit' />
             </form>
