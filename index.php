@@ -2,7 +2,7 @@
 <?php session_start(); ?>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8" >
 
         <link rel="stylesheet" type="text/css" href="style/style.css">
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
