@@ -75,7 +75,7 @@ function checkEmail() {
 	    $sql="SELECT * FROM user WHERE email = '$email'";
 	    $result = $conn->query($sql);
 	    if ($result->num_rows > 0) {
-	        echo "<span style='color:red;'>Already exist</span>";
+	        echo "<span style='color:red;'>Already exists</span>";
 	        return false;
 	    } else {
 	        echo "<span style='color:green;'>Available</span>";
