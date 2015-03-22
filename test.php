@@ -22,7 +22,12 @@ for ($i=0; $i < count($games); $i++) {
 $games = array_slice($games, 18);
  
 $games1 = implode(" ", $games);
-$kuud1 = ["March", "April", "May", "June", "July", "August", "September", "October", "November"];
+//$games1 = array($games);
+//print_r($games);
+$games1 = explode("March", $games1);
+//$games[6] = explode("April", $games[6]);
+
+$kuud1 = ["April", "May", "June", "July", "August", "September", "Oktober", "November"];
 
 //echo "jah";
 /*
@@ -30,38 +35,28 @@ end($games1);
 $n = key($games1);
 $games1[$n] = explode($kuud1[0], $games1[$n]);
 $kuud12 = array_shift($kuud1);
+print_r($games1);
 */
-$mängud = array();
-$mäng = array();
-$kontroll = false;
-foreach ($games as $k) {
-	if(count($kuud1) > 0){
-		if($k == $kuud1[1]){
-			array_push($mängud, $mäng);
-			$mäng = array();
-			array_shift($kuud1);
-		}
-	}
-	array_push($mäng, $k);
-}
-array_push($mängud, $mäng);
-
-
-
-/*
 function split_month ($games, $kuud){
+	//echo count($kuud). "  	";
+	//echo "jah";
+	//print_r($games);
+	//print_r($games);
 	if(count($kuud) > 0){	
 		end($games);
 		$n = key($games);
+		echo $n;
 		$games[$n] = explode($kuud[0], $games[$n]);
+		print_r($games);
 		$kuud12 = array_shift($kuud);
+		
 		split_month($games, $kuud);
 	} else {
-		print_r($games);
+		//print_r($games);
 	}
 }
 
 split_month($games1, $kuud1);
-*/
+
 
 ?>

@@ -3,11 +3,8 @@ ob_start();
 session_start();
 
 include('functions.php');
-// Facebook PHP SDK
-// https://developers.facebook.com/docs/php/gettingstarted
 require_once( 'facebook/facebook.php' );
 
-// https://developers.facebook.com/apps/
 $config = array(
     'appId' => '798278950247333',
     'secret' => 'e248bba7fba48375a683207df8380838',
@@ -16,8 +13,6 @@ $config = array(
 
 $facebook = new Facebook( $config );
 $user_id = $facebook->getUser();
-
-// https://developers.facebook.com/docs/php/howto/profilewithgraphapi
 
 if( $user_id ) {
 
@@ -45,4 +40,14 @@ if( $user_id ) {
     die();
 
 }
-header ("Refresh: 0; index.php");
+
+$lst_page = $_SESSION['lst_page'];
+
+if(is_null($lst_page)){
+
+    header ("Refresh: 0; index.php");
+
+    } else {
+
+    header ("Refresh: 0; $lst_page");
+}
