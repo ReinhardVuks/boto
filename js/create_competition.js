@@ -75,8 +75,10 @@ $(document).ready(function(){
         $('#removeButton').click(function() {   //textboxi eemaldamine ühe kaupa.
             if (boxes != 0) { 
                $('#category' + boxes).remove();
-
                $('#answer'+ boxes).remove();
+               $('#sats1'+boxes).remove();
+               $('#sats2'+boxes).remove();
+
                
                /*if(($'#radioanswer' + boxes).length!=null){
                   $('#radioanswer' + boxes).remove();
@@ -102,9 +104,7 @@ $(document).ready(function(){
             $('#addButton').attr('class', 'bt');
             boxes=0;
         });
-        $.post(create_competiton.php,{ index: boxes },function(data){
-          alert(data);
-        });
+       
     });
 
    

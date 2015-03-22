@@ -15,7 +15,6 @@
     <body>
 	    <div class="register">
             <?php
-            echo '<li><a href="login.php">Logi sisse</a></li>';
             if($_GET['msg']) { 
                 echo '<span>' . $_GET["msg"] . '<span>';
             };

@@ -1,9 +1,9 @@
 <?php
 
 function dbconnect(){
-	$servername="boto.cloudapp.net";
-	$username="guest";
-	$password="visitor";
+	$servername="eu-cdbr-azure-north-b.cloudapp.net";
+	$username="be6bf743499900";
+	$password="2569fe2a";
 	$dbname="botodb";
 
 	// Create connection
@@ -26,7 +26,6 @@ function getAllUsers() {
 	} else {
 	     echo "Error: " . $sql . "<br>" . $conn->error;
 	}
-	
 }
 
 function addUser($fname, $lname, $email, $pass) {
@@ -38,7 +37,6 @@ function addUser($fname, $lname, $email, $pass) {
 	} else {
     	echo "Error: " . $sql . "<br>" . $conn->error;
 	}
-	
 }
 
 function addUserFB($fname, $lname, $id) {
@@ -50,7 +48,6 @@ function addUserFB($fname, $lname, $id) {
 	} else {
     	echo "Error: " . $sql . "<br>" . $conn->error;
 	}
-	
 }
 
 function checkIfFBUserExists($fb_id) {
@@ -63,7 +60,6 @@ function checkIfFBUserExists($fb_id) {
 	        return false;
     	} 
 	}
-	
 }
 
 // Register
@@ -81,10 +77,7 @@ function checkEmail() {
 	        echo "<span style='color:green;'>Available</span>";
 	        return true;
 	    }
-	   
 	}
-
-
 }
 
 function lengthControl($fname, $lname, $email, $password) {
@@ -111,44 +104,10 @@ function registering() {
 	$password = $_POST['password'];
 	if (lengthControl($fname, $lname, $email, $password)) {
 		if (checkEmail()) {
-		    addUser($fname, $lname, $email, hash('sha512',$password));
+		    addUser($_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['password']);
 		} else {
 		    header("Location: register.php?msg=User with the given email already exists.");
 		}
-	}
-}
-function addCompetiton($compname,$participants){
-	$conn = dbconnect();
-	$sql = "INSERT INTO betting_competition (compname,participants) 
-		VALUES ('$compname', $participants)";
-	if ($conn->query($sql)) {
-    	header("Location: create_competition.php?msg=Competiton was created successfully. You can now add questions to your competiton.");
-	} else {
-    	echo "Error: " . $sql . "<br>" . $conn->error;
-	}
-}
-function create_competition(){
-	$compname= $_POST['compname'];
-	$participants= $_POST['partnum'];
-	if(strlen($compname)<1){
-		header("Location: create_competition.php?msg=Competiton name field was left empty.");
-	}
-	if($participants!=""){
-		if(is_numeric($participants)){
-			if(is_int($participants) ){
-				addCompetiton($compname,intval($participants));
-			}
-			else{
-				header("Location: create_competition.php?msg=Participants field wasn't a number.");
-			}
-		}
-		else{
-			header("Location: create_competition.php?msg=Participants field wasn't a number.");
-		}
-		
-	}
-	 else{
-		addCompetiton($compname,1000);
 	}
 }
 

@@ -1,5 +1,5 @@
 <?php 
 //include("functions.php");
 //create_competition();
-echo $_GET['sats20'];
+echo $_POST['index'];
 ?>
