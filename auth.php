@@ -40,4 +40,14 @@ if( $user_id ) {
     die();
 
 }
-header ("Refresh: 0; index.php");
+
+$lst_page = $_SESSION['lst_page'];
+
+if(is_null($lst_page)){
+
+    header ("Refresh: 0; index.php");
+
+    } else {
+
+    header ("Refresh: 0; $lst_page");
+}

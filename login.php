@@ -1,5 +1,8 @@
-<?php require_once( 'auth.php' ); ?>
 <!DOCTYPE html>
+<?php
+session_start();
+require_once( 'auth.php' );
+?>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -11,11 +14,19 @@
     </head>
     <body>
         <div class="login">
-            <?php if($_GET['msg']) { 
-                echo '<span>' . $_GET["msg"] . '<span>';
-            };
-                echo '<a href="' . $login_url . '"><img src="images/fb_login.png" alt="Facebook login"/></a>';
-            ?>
+        <?php 
+
+        if($_GET['msg']) { 
+            echo $_GET['msg']; 
+        } 
+        
+        echo '<a href="' . $login_url . '"><img src="images/fb_login.png"></a>';
+
+        $lst_page = $_SERVER['HTTP_REFERER'];
+        $_SESSION['lst_page'] = $lst_page;
+        
+
+        ?>
         </div>
     </body>
 </html>
