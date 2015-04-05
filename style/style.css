@@ -108,3 +108,25 @@ header {
 .banner img.down-arrow {
 	height: 80px;
 }
+
+/* My predictions */
+
+#allCompsButton,
+#myCompsButton,
+#myCreatedCompsButton {
+	border: 1px solid #000;
+	margin: 10px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+#allCompsButton:hover,
+#myCompsButton:hover,
+#myCreatedCompsButton:hover {
+	background-color: #800000;
+	color: #fff;
+}
+
+table {
+	margin: 30px 0 0 30px;
+}

@@ -1,3 +1,7 @@
+function fun(){
+          alert("jah");
+        }
+
 $(document).ready(function(){
 	
 	$('#partnum').hide();
@@ -17,46 +21,77 @@ $(document).ready(function(){
             borderTopColor: '#999', borderBottomColor: '#999',
             borderLeftColor: '#999', borderRightColor: '#999'
         });
+        
+
 
         $('#addButton').click(function() {
             if (boxes <= 49) {
 
                 boxes = boxes + 1;
                  var category = {
-                  cat1 : 'Jalgpall'
+                  cat0 : '--',
+                  Jalgpall : 'Jalgpall',
+                  Korvpall : 'Korvpall'
                };
-               var _category = $('<select id=category' + boxes +'>');
+               
+              var _category = $('<select name=category[] id=category' + boxes + ' onchange=fun(this)>');
+               var n = 0;
+
+              window.fun = function(element){
+                var id = element.id;
+                var value = $( "#" +id).val();
+                if (value=="Jalgpall") {
+                  $('#answerBasketball' + id.substring(8)).hide();
+                  $('#answerFootball' + id.substring(8)).show();
+                } else if(value=="Korvpall"){
+                  $('#answerFootball' + id.substring(8)).hide();
+                  $('#answerBasketball' + id.substring(8)).show();
+                };
+                }
+                
                $.each(category, function(val, text) {
-                  _category.append(
-                  $('<option id=categorytype' + boxes +'></option>').val(val).html(text)
-                   );
+                    _category.append(
+                    $('<option name=categorytype[] + id=categorytype' + boxes + n + ' ></option>').val(val).html(text)
+                    );
+                    n = n + 1;
                });
-
-               $(container).append(_category);
-
               
+            $(container).append(_category);
                 //dropdown menu tegemine
-                var answer = {
-                  ans1 : '1-2'
+                var answerFootball = {
+                  ans1 : '1X2',
+                  ans2 : 'Score',
+                  ans3 : 'Text'
                };
-               var _answer = $('<select id=answer' + boxes +'>');
-               $.each(answer, function(val, text) {
-                  _answer.append(
+               var _answerFootball = $('<select name=answer[] id=answerFootball' + boxes +' hidden>');
+               $.each(answerFootball, function(val, text) {
+                  _answerFootball.append(
                   $('<option id=answertype' + boxes +'></option>').val(val).html(text)
                    );
                });
-               var sats1=('<input type="text" id=sats1' + boxes +  ' placeholder="sats1" />');
-               var sats2=('<input type="text" id=sats2' + boxes + ' placeholder="sats2"/>');
-               var hidden=('<input  value='+boxes+'placeholder='+boxes+' id="hidden"/>');
-
+              var answerBasketball = {
+                ans1 : '1-2',
+                ans2 : 'Score',
+                ans3 : 'Text'
+              }
+              var _answerBasketball = $('<select name=answer[] id=answerBasketball' + boxes + ' hidden>');
+              $.each(answerBasketball, function(val, text) {
+                  _answerBasketball.append(
+                  $('<option id=answertype' + boxes +'></option>').val(val).html(text)
+                   );
+               });
                
+               var sats1=('<input type="text" name=team[] id=sats1' + boxes +  ' placeholder="sats1" />');
+               var sats2=('<input type="text" name=team[] id=sats2' + boxes + ' placeholder="sats2"/>');
 
-                $(container).append(_answer);
-                $(container).append(sats1);
-                $(container).append(sats2);
+              $(container).append(_answerFootball);
+              $(container).append(_answerBasketball);
+              $(container).append(sats1);
+              $(container).append(sats2);
               
               
-                $('#main').after(container); // kontener div mainile külge
+              $('#main').after(container); // kontener div mainile külge
+              
             }
             else {     
                 
@@ -71,7 +106,7 @@ $(document).ready(function(){
                   $(container).append('<input id=radioanswer' + boxes +  ' ' + 'value=Valikvastus'+'/>');
                   $('#main').after(container)*/
                
-         
+        
         $('#removeButton').click(function() {   //textboxi eemaldamine ühe kaupa.
             if (boxes != 0) { 
                $('#category' + boxes).remove();
@@ -104,7 +139,8 @@ $(document).ready(function(){
             $('#addButton').attr('class', 'bt');
             boxes=0;
         });
-       
-    });
+      $("#datepicker").datepicker("option", "dateFormat", "dd/mm");
+                
+      });
 
    

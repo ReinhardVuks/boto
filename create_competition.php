@@ -1,14 +1,13 @@
+<!DOCTYPE html>
 <?php
 session_start();
 ?>
-<html lang="en">
+<html>
     <head>
         <meta charset="utf-8" />
 
         <link rel="stylesheet" type="text/css" href="style/login.css">
-        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-        <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
-        <script src="js/create_competition.js" type="text/javascript"></script>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'/>
 
         <title>BOTO</title>
     </head>
@@ -24,8 +23,7 @@ session_start();
                 header ("Refresh: 0; login.php");
             } else {
             ?>
-    	  <form id='create-competition' action='create_competition_action.php' method='post' accept-charset='UTF-8'>
-                <input type='hidden' name='submitted' id='submitted' value='1'/>
+    	    <form name="competition" id='create-competition' action='create_competition_action.php' method='post' accept-charset='UTF-8'>
 
                 <label for='compname'>Ennustusvõistluse nimi</label>
                 <input type='text' name='compname' id='compname' maxlength="50" />
@@ -39,7 +37,7 @@ session_start();
                 <input type='text' name='partnum' id='partnum' />
                 <br>
 
-               
+               <p id="demo"></p>
 
                 <div id="main">
                     <input type="button" id="addButton" value="Lisa Küsimus" class="bt" />
@@ -47,9 +45,11 @@ session_start();
                     <input type="button" id="removeAllButton" value="Eemalda Kõik" class="bt" /><br />
 
                 </div>
-                <input type='submit' name='Submit' value='Submit' />
+                <input type='submit' id="submit" name='Submit' value='Submit' />
             </form>
+            <?php }; ?>
         </div>
-        <?php }; ?>
-        </body>
-    </html>
+    </body>
+    <script src="js/jquery-1.11.2.min.js" async></script>
+    <script src="js/create_competition.js" async></script>
+</html>

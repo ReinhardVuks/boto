@@ -24,6 +24,7 @@ if( $user_id ) {
         if (!checkIfFBUserExists($profile['id'])) {
             addUserFB($profile['first_name'], $profile['last_name'], $profile['id']);
         }
+        $_SESSION['sessionUserId'] = getIdByFacebookId($profile['id']);
 
     } catch( FacebookApiException $e ) {
 
