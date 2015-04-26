@@ -109,24 +109,81 @@ header {
 	height: 80px;
 }
 
-/* My predictions */
+/* COMPETITIONS.PHP */
+
+.main {
+	text-align: center;
+	margin: 0 auto;
+	max-width: 1080px;
+}
+
+.tab-buttons {
+	margin-top: 50px;
+	border-bottom: 1px solid #800000;
+	padding: 10px;
+}
 
 #allCompsButton,
 #myCompsButton,
 #myCreatedCompsButton {
-	border: 1px solid #000;
-	margin: 10px;
-	padding: 5px 10px;
+	margin: 30px;
 	cursor: pointer;
+	padding: 10px;
+	color: #555;
+	border-style: solid;
+	border-width: 1px 1px 0 1px;
+	border-color: #fff;
+	font-weight: 700;
+	-webkit-transition: background-color 1500ms ease, color 1000ms ease, border 1000ms ease;
+	-moz-transition: background-color 1500ms ease, color 1000ms ease, border 1000ms ease;
+	-ms-transition: background-color 1500ms ease, color 1000ms ease, border 1000ms ease;
+	-o-transition: background-color 1500ms ease, color 1000ms ease, border 1000ms ease;
+	transition: background-color 1500ms ease, color 1000ms ease, border 1000ms ease;
 }
 
 #allCompsButton:hover,
 #myCompsButton:hover,
 #myCreatedCompsButton:hover {
+	border: 1px solid #800000;
+	border-radius: 4px 4px 0 0;
+}
+
+table {
+	margin: 30px auto;
+	border-collapse: collapse;
+	font-family: "Roboto";
+}
+table.allComps tr:first-child,
+table.myComps tr:first-child,
+table.myCreatedComps tr:first-child {
 	background-color: #800000;
 	color: #fff;
 }
 
-table {
-	margin: 30px 0 0 30px;
+table.allComps tr th,
+table.myComps tr th,
+table.myCreatedComps tr th,
+table.allComps tr td,
+table.myComps tr td,
+table.myCreatedComps tr td {
+	padding: 15px 10px;
+	width: 150px;
+}
+
+table.allComps tr th,
+table.myComps tr th,
+table.myCreatedComps tr th {
+	font-weight: 700;
+}
+
+table.allComps tr th:first-child,
+table.myComps tr th:first-child,
+table.myCreatedComps tr th:first-child {
+	border-radius: 4px 0 0 4px;
+}
+
+table.allComps tr th:last-child,
+table.myComps tr th:last-child,
+table.myCreatedComps tr th:last-child {
+	border-radius: 0 4px 4px 0;
 }

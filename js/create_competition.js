@@ -1,6 +1,3 @@
-function fun(){
-          alert("jah");
-        }
 
 $(document).ready(function(){
 	
@@ -88,6 +85,8 @@ $(document).ready(function(){
               $(container).append(_answerBasketball);
               $(container).append(sats1);
               $(container).append(sats2);
+
+             
               
               
               $('#main').after(container); // kontener div mainile külge
@@ -101,11 +100,7 @@ $(document).ready(function(){
 
             }
         });
-        /*$('#answertype' + boxes).change(function(){
-               if(('#answertype'+ boxes + ' ' + ' :selected').val()==valik2){
-                  $(container).append('<input id=radioanswer' + boxes +  ' ' + 'value=Valikvastus'+'/>');
-                  $('#main').after(container)*/
-               
+        
         
         $('#removeButton').click(function() {   //textboxi eemaldamine ühe kaupa.
             if (boxes != 0) { 
@@ -114,10 +109,7 @@ $(document).ready(function(){
                $('#sats1'+boxes).remove();
                $('#sats2'+boxes).remove();
 
-               
-               /*if(($'#radioanswer' + boxes).length!=null){
-                  $('#radioanswer' + boxes).remove();
-               }*/
+              
                boxes = boxes - 1;
 
              }
@@ -139,8 +131,10 @@ $(document).ready(function(){
             $('#addButton').attr('class', 'bt');
             boxes=0;
         });
-      $("#datepicker").datepicker("option", "dateFormat", "dd/mm");
+      
                 
       });
+
+
 
    

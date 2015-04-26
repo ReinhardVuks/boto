@@ -1,7 +1,5 @@
-<?php 
-echo 'juut';
+<?php
 include "functions.php";
 
 getAllUsernames();
-
 ?>

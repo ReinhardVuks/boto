@@ -27,6 +27,26 @@ function getAllUsers() {
 	     echo "Error: " . $sql . "<br>" . $conn->error;
 	}
 }
+function getAllUsernames() {
+	$conn = dbconnect();
+	$sql="SELECT * FROM user";
+	$usernames=array();
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+	    while($row = $result->fetch_assoc()) {
+	    	$fname=$row['firstname'];
+	    	$lname=$row['lastname'];
+	    	$fullname=$fname + " " + $lname;
+	        array_push($usernames, $fullname);
+
+    	} 
+	} else {
+	     echo "Error: " . $sql . "<br>" . $conn->error;
+	}
+	return $usernames;
+}
+
+
 
 function addUser($fname, $lname, $email, $pass) {
 	$conn = dbconnect();
@@ -113,7 +133,7 @@ function registering() {
 
 function allComps() {
 	$conn = dbconnect();
-	$sql="SELECT * from betting_competition inner join  user on  user.id=betting_competition.creator GROUP BY participants";
+	$sql="SELECT * from betting_competition inner join  user on  user.id=betting_competition.creator GROUP BY betting_competition.id";
 	$comps = array();
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {

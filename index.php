@@ -42,8 +42,10 @@ session_start();
             </div>
         </header>
 	    <div class="main-menu"></div>
+    <script src="js/jquery-1.11.2.min.js" ></script>
+    <script src="js/live.js" defer></script>
     </body>
-    <script src="js/live.js" async></script>
-    <script src="js/jquery-1.11.2.min.js" async></script>
+    
+    
 </html>
 

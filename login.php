@@ -3,7 +3,7 @@
 session_start();
 require_once( 'auth.php' );
 ?>
-<html lang="en">
+<html>
     <head>
         <meta charset="utf-8" />
 
@@ -20,7 +20,7 @@ require_once( 'auth.php' );
             echo $_GET['msg']; 
         } 
         
-        echo '<a href="' . $login_url . '"><img src="images/fb_login.png"></a>';
+        echo '<a href="' . $login_url . '"><img src="images/fb_login.png" alt="facebook"></a>';
 
         $lst_page = $_SERVER['HTTP_REFERER'];
         $_SESSION['lst_page'] = $lst_page;
