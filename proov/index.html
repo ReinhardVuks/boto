@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Õigus</title>
+
+        <meta charset="UTF-8">
+
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+
+        <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+
+    </head>
+    <body>
+        <header id="opening">
+            <div id="filter">
+                <h2>Pakume õigusabi Soomes töötavatele eestlastele,<br>
+                    kellel on küsimusi või probleeme seoses oma õigustega Soome tööturul</h2>
+                <h2>Kirjuta meile</h2>
+                <div id="down">
+                    <a id="arrow-button">
+                        <img id="main-img" src="img/main-arrow.png">
+                        <img id="replace-img" src="img/replace-arrow.png">
+                    </a>
+                </div>
+            </div>
+        </header>
+        <div id="contact">
+            <div id="contact-wrapper">
+                <h1>VÕTA ÜHENDUST</h1>
+                <ul class="contact-info">
+                    <li class="location">
+                        <img src="img/location.png" alt="">
+                        <p>Gonsiori 32-1, Tallinn, Eesti</p>
+                    </li>
+                    <li class="phone">
+                        <img src="img/phone.png" alt="">
+                        <p>+372 605 3084</p>
+                    </li>
+                    <li class="mail">
+                        <img src="img/mail.png" alt="">
+                        <p><a href="mailto:info@flaka.ee">siia@meil.ee</a></p>
+                    </li>
+                </ul>
+                <div class="contact-messages"></div>
+                <form id="email-form" action="email.php" method="post">
+                    <div class="contact-name">
+                        <input type="text" name="full-name" placeholder="Nimi">
+                    </div>
+                    <div class="contact-email">
+                        <input type="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="contact-text">
+                        <textarea name="message" cols="40" rows="10" placeholder="Sisu"></textarea>
+                    </div>
+                    <input id="submit-email" type="submit" value="Saada">
+                </form>
+            </div>
+        </div>
+        <div id="footer">
+            <p>Copyright © 2015</p>
+        </div>
+    </body>
+</html>

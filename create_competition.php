@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <?php
 session_start();
@@ -37,7 +38,14 @@ session_start();
 
                     <input type='text' name='partnum' id='partnum' />
                     <br>
-                    <input type='text' name='allowed' id='allowedusers' placeholder='kutsu kasutajaid'/>
+                    <div class="ui-widget">
+                        <label for="users">Users: </label>
+                        <input id="users" name="users">
+                        
+                        <input id="list" name="userlist" type="hidden">
+ 
+                   
+                    </div>
 
                    
 
@@ -47,13 +55,16 @@ session_start();
                         <input type="button" id="removeAllButton" value="Eemalda Kõik" class="bt" /><br />
 
                     </div>
-                    <input type='submit' id="submit" name='Submit' value='Submit' />
+                    <input type='submit' id="submit" name='submit' value='Submit' />
                 </form>
                 <?php }; ?>
             </div>
         </div>
     <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery-1.11.4.ui.js"></script>
     <script src="js/create_competition.js" defer></script>
+
+    
     </body>
    
 </html>

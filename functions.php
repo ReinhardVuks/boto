@@ -29,21 +29,22 @@ function getAllUsers() {
 }
 function getAllUsernames() {
 	$conn = dbconnect();
-	$sql="SELECT * FROM user";
+	$sql="SELECT firstname, lastname   FROM user where concat(firstname,' ',lastname, ' ') like '%".$_GET['term']."%'" ;
 	$usernames=array();
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 	    while($row = $result->fetch_assoc()) {
+	    	
 	    	$fname=$row['firstname'];
 	    	$lname=$row['lastname'];
-	    	$fullname=$fname + " " + $lname;
+	    	$fullname=$fname . " ". $lname;
 	        array_push($usernames, $fullname);
 
     	} 
 	} else {
 	     echo "Error: " . $sql . "<br>" . $conn->error;
 	}
-	return $usernames;
+	return  json_encode($usernames);
 }
 
 
@@ -204,15 +205,99 @@ function getNewComps() {
 
 function create_competition(){
 	$conn=dbconnect();
-	$compname=$_POST['compname'];
-	$participants=$_POST['partnum'];
-	$sql='INSERT INTO betting_competition(compname,participants) VALUES($compname,$participants)';
+	$allowedusers=$_POST['userlist'];
+	$list=getIdByName($allowedusers);
+	$store="[";
+	foreach($list as $id){
+		$store.=$id['id'][0];
+		$store.=",";
+	}
+	$store=chop($store,",");
+	$store.="]";
+	$compname = $_POST['compname'];
+	$creator = $_SESSION['sessionUserId'];
+	$numUsers = $_POST['partnum'];
+	$sql="INSERT INTO betting_competition(compname, creator, allowedusers, numUsers)
+		  VALUES ('$compname', '$creator', '$store', '$numUsers')";
 	if($conn->query($sql)){
-		echo 'olemas';
+		echo 'Ennustus edukalt loodud';
 	}
 	else{
 		echo "Error: " . $sql . "<br>" . $conn->error;
 	}
 
 }
+
+function add_questions(){
+	$conn = dbconnect();
+	$compname = $_POST['compname'];
+	$sql="SELECT id FROM betting_competition WHERE compname = '$compname'";
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+	    while($row = $result->fetch_assoc()) {
+	    	$compId = $row['id'];
+    	} 
+	} else {
+	    echo "Error: " . $sql . "<br>" . $conn->error;
+	}
+
+	for($i = 0; $i < count($_POST['category']); $i++){
+		$team1 = null;
+		$team2 = null;
+		$textQ = null;
+
+		$quest_type = $_POST['category'][$i];
+
+		if($quest_type == 'Jalgpall'){
+			$ans_type = $_POST['answer'][$i*2];
+		} else if ($quest_type == 'Korvpall'){
+			$ans_type = $_POST['answer'][$i*2+1];
+		}
+		if($ans_type == 'ansText'){
+			$textQ = $_POST['team'][$i*3+2];
+		} else {
+			$team1 = $_POST['team'][$i*3];
+			$team2 = $_POST['team'][$i*3+1];
+		}
+		$cor_ans = null;
+		$sql1="INSERT INTO bet_question(compid, quest_type, ans_type, cor_ans, team1, team2, textq)
+			  VALUES ('$compId', '$quest_type', '$ans_type', '$cor_ans', '$team1', '$team2', '$textQ')";
+
+		if($conn->query($sql1)){
+		}
+		else{
+			echo "Error: " . $sql1 . "<br>" . $conn->error;
+		}
+	}
+	
+}
+
+function getIdByName($userlist){
+	$string=str_replace("[","",$userlist);
+	$string1=str_replace("]", "", $string);
+	$usernames=explode(",",$string1);
+	$conn = dbconnect();
+	$id=array();
+	foreach($usernames as $name) {
+		
+		$sql="SELECT id FROM user WHERE concat(firstname,' ',lastname, ' ')=$name";
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+	    while($row = $result->fetch_assoc()) {
+	   	array_push($id,$row);
+
+    	}
+	}
+	else {
+	    echo "Error: " . $sql . "<br>" . $conn->error;
+	}
+	}
+	return $id;
+		
+    
+	} 
+
+
+
+
 ?>

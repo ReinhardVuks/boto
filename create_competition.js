@@ -1,10 +1,6 @@
 
-var usernames=[];
-var ids=[];
 $(document).ready(function(){
 	
-
-
 	$('#partnum').hide();
 	$('input[type=radio]').click(function(){
    if($('input[value=limited]').is(":checked")) { 
@@ -26,16 +22,6 @@ $(document).ready(function(){
 
 
         $('#addButton').click(function() {
-
-
-             
-              
-
-            var listfield=document.getElementById('list');
-            listfield.value=JSON.stringify(usernames);
-
-
-          
             if (boxes <= 49) {
 
                 boxes = boxes + 1;
@@ -164,39 +150,21 @@ $(document).ready(function(){
             $('#addButton').attr('class', 'bt');
             boxes=0;
         });
-       
+        function names(request,result){
+        $.get("getUserFromDb.php",request,function(data){
+          var me=jQuery.parseJSON(data);
+            return me;
+        });}
        
         $(function(){
          
          $( "#users" ).autocomplete({
 
-       source: function( request, response ) {
-        $.ajax({
-          type: "GET",
-          url: "getUserFromDb.php",
-          dataType: "json",
-          data: {
-            term: request.term
-          },
-          success: function( data ) {
-            response( data );
-          }
-        });
-      },
+       source:names,
       minLength: 2,
-      select: function(event,ui){
-              usernames.push(ui.item.value);
-          
-        
-         
-
-        }
-    });
-
+    });        
       });
-      });
-     
-
+        });
 
 
 

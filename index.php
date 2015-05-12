@@ -41,9 +41,19 @@ session_start();
                 <img class="down-arrow" src="images/arrow-down.png" alt="down-arrow"/>
             </div>
         </header>
-	    <div class="main-menu"></div>
+	    <div class="main-menu">
+            <div class="menu">
+        <a class="yellow" href="#">Avalehe</a>
+        <a class="green" href="#">Loo ennustus</a>
+        <a class="blue" href="#">Minu ennustused</a>
+        <a class="purple" href="#">Registreeru</a>
+        </div>
+
+        </div>
+
     <script src="js/jquery-1.11.2.min.js" ></script>
     <script src="js/live.js" defer></script>
+    <script src="js/windowsmenu.js" defer></script>
     </body>
     
     

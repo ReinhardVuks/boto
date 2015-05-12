@@ -1,7 +1,11 @@
 <?php 
-echo 'juut';
 include "functions.php";
+session_start();
 
-getAllUsernames();
 
-?>
+
+create_competition();
+add_questions();
+
+
+
