@@ -5,7 +5,11 @@ $(document).ready(function() {
 			$("#valid").html("");
 		} else {
 			$.ajax({
+<<<<<<< HEAD
 				type: "GET",
+=======
+				type: "POST",
+>>>>>>> c725b2c9653b1c65aa732ce79d010911577e7469
 				url: "ajax_checking.php",
 				data: "email="+ email ,
 				success: function(html){

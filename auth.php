@@ -55,3 +55,17 @@ if(is_null($lst_page)){
     //header ("Refresh: 0; $lst_page");
     header ("Refresh: 0; competitions.php#myCompetitions");
 }
+<<<<<<< HEAD
+=======
+
+$lst_page = $_SESSION['lst_page'];
+
+if(is_null($lst_page)){
+
+    header ("Refresh: 0; index.php");
+
+    } else {
+
+    header ("Refresh: 0; $lst_page");
+}
+>>>>>>> c725b2c9653b1c65aa732ce79d010911577e7469

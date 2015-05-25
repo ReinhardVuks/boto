@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html, body {
 	height: 100%;
 	width: 100%;
@@ -144,4 +145,8 @@ form#register-form input[type="submit"]:hover {
 	form#register-form input[type="submit"] {
 		font-size: 12px;
 	}
+=======
+.register {
+	margin: 15% 45%;
+>>>>>>> c725b2c9653b1c65aa732ce79d010911577e7469
 }
