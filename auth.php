@@ -1,14 +1,11 @@
+<!DOCTYPE html>
 <?php
 ob_start();
 session_start();
-// Facebook PHP SDK
-// https://developers.facebook.com/docs/php/gettingstarted
+
+include('functions.php');
 require_once( 'facebook/facebook.php' );
 
-// Configuration
-require_once( 'config.php' );
-
-// https://developers.facebook.com/apps/
 $config = array(
     'appId' => '798278950247333',
     'secret' => 'e248bba7fba48375a683207df8380838',
@@ -18,8 +15,6 @@ $config = array(
 $facebook = new Facebook( $config );
 $user_id = $facebook->getUser();
 
-// https://developers.facebook.com/docs/php/howto/profilewithgraphapiõ
-
 if( $user_id ) {
 
     try {
@@ -27,7 +22,10 @@ if( $user_id ) {
         $profile = $facebook->api( '/me', 'GET' );
         $_SESSION['loggedin'] = true;
         $_SESSION['sess_name'] = $profile['name'];
-        
+        if (!checkIfFBUserExists($profile['id'])) {
+            addUserFB($profile['first_name'], $profile['last_name'], $profile['id']);
+        }
+        $_SESSION['sessionUserId'] = getIdByFacebookId($profile['id']);
 
     } catch( FacebookApiException $e ) {
 
@@ -37,11 +35,23 @@ if( $user_id ) {
 
     }
 
-} else {
+ } 
+  else {
 
-    $login_url = $facebook->getLoginUrl(); 
-    require( 'login.php' );
-    die();
+      $login_url = $facebook->getLoginUrl(); 
+      require( 'login.php' );
+      die();
 
+ }
+
+$lst_page = $_SESSION['lst_page'];
+
+if(is_null($lst_page)){
+
+    header ("Refresh: 0; competitions.php");
+
+    } else {
+
+    //header ("Refresh: 0; $lst_page");
+    header ("Refresh: 0; competitions.php#myCompetitions");
 }
-header ("Refresh: 0; index.php");

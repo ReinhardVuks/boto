@@ -19,7 +19,7 @@ html, body {
 	-o-background-size: cover;
 }
 
-#main-login {
+#main-register {
 	position: absolute;
 	width: 100%;
 	text-align: center;
@@ -33,13 +33,13 @@ html, body {
     margin: 5% auto;
 }
 
-.login {
+.register {
 	position: relative;
 	right: 0;
     left: 0;
     margin: 0 auto;
     margin-bottom: 2%;
-	width: 500px;
+	width: 400px;
     background-color: #800000;
     opacity: 0.97;
     padding: 50px;
@@ -47,55 +47,41 @@ html, body {
     text-align: left;
 }
 
-#login-form,
-#social_logins {
+.register label:not(.fname),
+.register input:not(#fname) {
+	display: block;
+}
+
+.register input#email {
+	display: inline-block;
+}
+
+.register label.fname,
+.register input#fname,
+.register label.lname,
+.register input#lname {
 	float: left;
-	width: 50%;
+	width: 45%;
 }
 
-#login-form input {
-	width: 90%;
-	margin: 5px 0 15px 0;
+.register input#fname,
+.register label.fname {
+	margin-right: 8%;
 }
 
-#social_logins a:nth-child(3) img,
-#social_logins a:nth-child(4) img {
-	background-color: #fff;
-	border-radius: 4px;
-	padding: 8px 12px;
-}
-
-#social_logins a:nth-child(3) img {
-	margin-right: 8px;
-}
-
-#social_logins a:nth-child(2) img {
-	width: 210px;
-	margin-right: -4px;
-	height: 46px;
-}
-
-#social_logins {
-	text-align: right;
-}
-
-#login-form label {
+#register-form label {
 	color: #FFF430;
- 	margin-right: 10px;
  	font-size: 18px;
  	letter-spacing: 1px;
 }
 
-#login-form a {
-  	text-decoration: none;
- 	display: block;
- 	color: #FFF430;
- 	margin-top: 10px;
- 	letter-spacing: 1px;
- 	font-size: 14px;
+#register-form input {
+	margin-bottom: 20px;
+	width: 45%;
+	margin-left: 1px;
 }
 
-form#login-form input {
+form#register-form input {
   border: 0;
   border-bottom: 1px solid rgba(255, 244, 48, 0.25);
   background-color: #800000;
@@ -103,17 +89,18 @@ form#login-form input {
   color: #FFF430;
 }
 
-form#login-form input:focus {
+form#register-form input:focus {
   outline: 0;
   border-bottom: 1px solid #FFF430;
 }
 
-form#login-form input[type="submit"] {
+form#register-form input[type="submit"] {
   	background: none;
   	border: 2px solid #FFF430;
   	color: #FFF430;
   	width: auto;
-  	margin: 5px 0;
+  	margin: 0;
+  	margin-top: 40px;
   	padding: 10px 20px;
   	font-weight: 700;
   	letter-spacing: 1px;
@@ -125,48 +112,36 @@ form#login-form input[type="submit"] {
 	font-size: 18px;
 }
 
-form#login-form input[type="submit"]:hover {
+form#register-form input[type="submit"]:hover {
 	color: #800000;
 	background-color: #FFF430;
 	cursor: pointer;
 }
 
+#valid {
+	display: inline-block;
+}
+
 @media screen and (max-width: 650px) {
-	.login {
+	.register {
 		width: 50%;
 	}
 
-	#login-form,
-	#social_logins {
-		width: 100%;
-	}
-
-	#social_logins a:nth-child(2) img {
-		margin-left: -4px;
-	}
-
-	#social_logins {
-		text-align: left;
-		margin-top: 30px;
+	#register-form label {
+		font-size: 12px;
 	}
 }
 
 @media screen and (max-width: 400px) {
-	#social_logins a:nth-child(1) img,
-	#social_logins a:nth-child(2) img {
-		height: 40px;
-		width: auto;
-	}
-
 	#logo {
 		width: 150px;
 	}
-}
 
-@media screen and (max-width: 350px) {
-	#social_logins a:nth-child(1) img,
-	#social_logins a:nth-child(2) img {
-		height: 35px;
-		width: auto;
+	#register-form label {
+		font-size: 10px;
+	}
+
+	form#register-form input[type="submit"] {
+		font-size: 12px;
 	}
 }

@@ -1,0 +1,180 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	font-family: "Montserrat";
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	cursor: pointer;
+}
+
+header#opening {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: #fff;
+	background: url(../img/main.jpg) no-repeat center center scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
+#filter {
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
+header h2:first-child {
+	padding-top: 10%;
+	margin-bottom: 5%;
+}
+
+#down {
+	margin-top: 20px;
+}
+
+header img {
+	-webkit-transition: all 1000ms ease;
+	-moz-transition: all 1000ms ease;
+	-ms-transition: all 1000ms ease;
+	-o-transition: all 1000ms ease;
+	transition: all 1000ms ease;
+}
+
+#main-img {
+	position: absolute;
+	opacity: 1;
+}
+
+#replace-img {
+	opacity: 0;
+}
+
+/* Contact From */
+
+#contact{
+	background: #eee;
+	padding: 100px;
+	text-align: center;
+}
+
+#contact-wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+#contact ul {
+	list-style: none;
+	margin-top: 50px;
+	padding: 0;
+}
+
+#contact ul li {
+	display: inline-block;
+	margin: 0 20px;
+}
+
+#contact ul li p {
+	float: right;
+	line-height: 0;
+	margin-left: 10px;
+}
+
+#contact img {
+	float: left;
+	width: 30px;
+	height: auto;
+}
+
+#contact a {
+	text-decoration: none;
+	color: #000;
+	font-size: 16px;
+}
+
+#contact .mail a:hover {
+	color: #00A1D8;
+}
+
+#email-form {
+	clear: both;
+	padding: 30px;
+}
+
+input,
+textarea {
+	font-size: 15px;
+}
+
+input[type="text"],
+input[type="email"] {
+	background: none;
+	border: 0;
+	border-bottom: 1px solid rgba(0,0,0,0.22);
+	height: 40px;
+	width: 48.19%;
+	float: left;
+	color: #000;
+}
+
+input[type="text"] {
+	margin-right: 30px;
+	margin-bottom: 30px;
+}
+
+textarea {
+	background: none;
+	border: 0;
+	border-bottom: 1px solid rgba(0,0,0,0.22);
+	width: 100%;
+	color: #000;
+	resize: vertical;
+}
+
+input[type="submit"] {
+	border: 1px solid rgba(0,0,0,0.22);
+	background: none;
+	font-weight: 700;
+	letter-spacing: 1px;
+	padding: 10px 20px;
+	margin-top: 30px;
+	-webkit-transition: all 1000ms ease;
+	-moz-transition: all 1000ms ease;
+	-ms-transition: all 1000ms ease;
+	-o-transition: all 1000ms ease;
+	transition: all 1000ms ease;
+}
+
+input[type="submit"]:hover {
+	background-color: #00A1D8;
+	color: #fff;
+	cursor: pointer;
+}
+
+textarea:focus, input:focus {
+    outline: 0;
+    border-bottom: 1px solid #00A1D8;
+}
+
+/* Footer */
+
+#footer {
+	background-color: #111;
+	color: #fff;
+	padding: 10px 100px;
+}

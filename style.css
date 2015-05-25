@@ -192,7 +192,7 @@ header img {
 }
 
 .tab-buttons {
-	margin-bottom: 5%;
+	margin-bottom: 100px;
 }
 
 .tab-buttons li {
@@ -234,10 +234,6 @@ table {
 	color: #FFF;
 }
 
-#comps table {
-	width: 800px;
-}
-
 #comps table tr:first-child{
 	color: #800000;
 	background-color: #FFF430;
@@ -246,6 +242,7 @@ table {
 #comps table tr th,
 #comps table tr td {
 	padding: 15px 10px;
+	width: 150px;
 }
 
 #comps table tr th {
@@ -375,7 +372,7 @@ a {
 
 #create-comps #logo,
 #comps #logo {
-	margin: 10% auto 7% auto;
+	margin: 7% auto 4% auto;
 	width: 250px;
 }
 
@@ -615,7 +612,7 @@ table.results tr th:last-child{
 
 /* Smaller screens */
 
-@media screen and (max-device-width: 1075px) {
+@media screen and (max-width: 1075px) {
 	#learn .step img {
 		width: 60px;
 	}
@@ -628,26 +625,9 @@ table.results tr th:last-child{
 	#learn .step {
 		margin: 0 20px;
 	}
-
-	#create-comps .main,
-	#comps .main {
-		width: 700px;
-	}
-
-	#create-comps table,
-	#comps table {
-		width: 650px;
-	}
-
-	#create-comps table tr th,
-	#create-comps table tr td,
-	#comps table tr th,
-	#comps table tr td {
-		padding: 5px 0;
-	}
 }
 
-@media screen and (max-device-width: 800px) {
+@media screen and (max-width: 800px) {
 	.banner {
 		left:0;
 	    right:0;
@@ -675,18 +655,9 @@ table.results tr th:last-child{
 	#menu .size {
 		font-size: 15px;
 	}
-
-	#create-comps .main,
-	#comps .main {
-		width: 500px;
-	}
-
-	#comps table {
-		width: 450px;
-	}
 }
 
-@media screen and (max-device-width: 585px) {
+@media screen and (max-width: 585px) {
 	#menu .size {
 		font-size: 12px;
 	}
@@ -698,38 +669,9 @@ table.results tr th:last-child{
 	.banner p {
 		font-size: 13px;
 	}
-
-	#create-comps .main,
-	#comps .main {
-		width: 400px;
-	}
-
-	#comps table {
-		width: 350px;
-	}
-
-	.tab-buttons a {
-		width: 110px;
-	}
-
-	#comps #logo {
-		width: 150px;
-	}
-
-	.help-menu ul li a {
-		padding: 4px 2px;
-	}
-
-	.help-menu ul li {
-		padding: 10px 5px;
-	}
-
-	.help-menu ul {
-		padding-right: 0;
-	}
 }
 
-@media screen and (max-device-width: 500px) {
+@media screen and (max-width: 500px) {
 	.help-menu #alogo {
 		display: none;
 	}
@@ -739,11 +681,11 @@ table.results tr th:last-child{
 	}
 
 	#menu .size {
-		font-size: 9px;
+		font-size: 10px;
 	}
 }
 
-@media screen and (max-device-width: 400px) {
+@media screen and (max-width: 400px) {
 	#learn .step {
 		display: block;
 		margin: 0 0 20px 0;
@@ -758,69 +700,11 @@ table.results tr th:last-child{
 	}
 
 	#menu .size {
-		display: block;
-		float: none;
-		font-size: 18px;
-	}
-
-	.help-menu ul li a {
-		padding: 4px 6px;
-	}
-
-	.help-menu ul li {
-		padding: 10px 20px;
-	}
-
-	.help-menu {
-		height: 80px;
-	}
-
-	#create-comps #logo,
-	#comps #logo {
-		margin-top: 35%;
-	}
-
-	#comps table {
-		width: 300px;
-		font-size: 10px;
-	}
-
-	#create-comps .main,
-	#comps .main {
-		width: 400px;
-	}
-
-	.tab-buttons a {
-		font-size: 10px;
-		width: 70px;
+		font-size: 8px;
 	}
 }
 
-@media screen and (max-device-width: 370px) {
-	#comps table {
-		width: 320px;
-		font-size: 10px;
-	}
-
-	#create-comps .main,
-	#comps .main {
-		width: 370px;
-	}
-}
-
-@media screen and (max-device-width: 320px) {
-	#comps table {
-		width: 270px;
-		font-size: 10px;
-	}
-
-	#create-comps .main,
-	#comps .main {
-		width: 320px;
-	}
-}
-
-@media screen and (max-device-width: 280px) {
+@media screen and (max-width: 280px) {
 	.help-menu ul li {
 		padding: 10px;
 	}
