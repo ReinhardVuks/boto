@@ -13,32 +13,17 @@ session_start();
         <title>BOTO</title>
     </head>
     <body>
-        <div id="newComps"></div>
 	    <header class="background">
             <div class="help-menu">
                 <a id="alogo" href="http://boto.azurewebsites.net/"><img src="images/boto-white.png" alt="boto logo"/></a>
                 <ul>
                     <?php
-<<<<<<< HEAD
                     if ($_SESSION['loggedin']){
                         echo '<li><a>' . $_SESSION["sess_name"] . '</a></li>
                             <li><a href="logout.php">Logi välja</a></li>';
                     } else {
                         echo '<li><a href="login.php">Logi sisse</a></li>
                             <li><a href="register.php">Registreeru</a></li>';
-=======
-                    if($_SESSION['loggedin']){
-                     echo '<li><a>Welcome, ';
-                     echo $_SESSION["sess_name"];
-                     echo '</a></li>';
-                     echo '<li><a href="logout.php">Logi välja</a></li>';
-                     echo '<li><a href="create_competition.php">Loo ennustus</a></li>';
-                     echo '<li><a href="competitions.php">Minu Ennustused</a></li>';
-                    } else {
-                        echo '<li><a href="login.php">Logi sisse</a></li>
-                              <li><a href="register.php">Registreeru</a></li>
-                            <li><a href="create_competition.php">Loo ennustus</a></li>';
->>>>>>> c725b2c9653b1c65aa732ce79d010911577e7469
                     }
                     ?>
                 </ul>
@@ -59,7 +44,6 @@ session_start();
                         <img id="replace-img" src="images/replace-arrow.png" alt="replace-arrow">
                     </a>
                 </div>
-<<<<<<< HEAD
             </div>
         </header>
         <div id="learn">
@@ -113,27 +97,4 @@ session_start();
         <script src="js/windowsmenu.js" defer></script>
         <script src="js/main.js" defer></script>
 <?php include "footer.php"; ?>
-=======
-                <h2>Discover more</h2>
-                <img class="down-arrow" src="images/arrow-down.png" alt="down-arrow"/>
-            </div>
-        </header>
-	    <div class="main-menu">
-            <div class="menu">
-        <a class="yellow" href="#">Avalehe</a>
-        <a class="green" href="#">Loo ennustus</a>
-        <a class="blue" href="#">Minu ennustused</a>
-        <a class="purple" href="#">Registreeru</a>
-        </div>
-
-        </div>
-
-    <script src="js/jquery-1.11.2.min.js" ></script>
-    <script src="js/live.js" defer></script>
-    <script src="js/windowsmenu.js" defer></script>
-    </body>
-    
-    
-</html>
->>>>>>> c725b2c9653b1c65aa732ce79d010911577e7469
 
