@@ -5,7 +5,7 @@ $(document).ready(function() {
 			$("#valid").html("");
 		} else {
 			$.ajax({
-				type: "GET",
+				type: "POST",
 				url: "ajax_checking.php",
 				data: "email="+ email ,
 				success: function(html){

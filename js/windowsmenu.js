@@ -1,16 +1,10 @@
 $(document).ready(function() {
-<<<<<<< HEAD
 	$('#menu a').hover(function() {
-=======
-	$('.menu a').hover(function() {
-		console.log("jobu");
->>>>>>> c725b2c9653b1c65aa732ce79d010911577e7469
 		$(this).stop().animate({
 			opacity: 1
 		}, 300);
 	}, function() {
 		$(this).stop().animate({
-<<<<<<< HEAD
 			opacity: 0.7
 		}, 300);
 	});
@@ -41,9 +35,4 @@ $(document).ready(function() {
 	    resizeMenu();
 	});
 
-=======
-			opacity: 0.3
-		}, 300);
-	});
->>>>>>> c725b2c9653b1c65aa732ce79d010911577e7469
 });

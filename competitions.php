@@ -27,7 +27,7 @@
                     <li><a href="logout.php">Logi välja</a></li>
                 </ul>
             </div>
-            <a href="http://boto.azurewebsites.net/"><img id="logo" src="images/boto-white-big.png"></a>
+            <a href="http://boto.azurewebsites.net/"><img id="logo" src="images/boto-white-big.png" alt="boto logo"></a>
             <div class="main">
                 <div class="tab-buttons">
                     <ul>

@@ -97,4 +97,3 @@ session_start();
         <script src="js/windowsmenu.js" defer></script>
         <script src="js/main.js" defer></script>
 <?php include "footer.php"; ?>
-
