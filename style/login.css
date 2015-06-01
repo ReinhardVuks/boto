@@ -131,7 +131,7 @@ form#login-form input[type="submit"]:hover {
 	cursor: pointer;
 }
 
-@media screen and (max-width: 650px) {
+@media (max-width: 650px) {
 	.login {
 		width: 50%;
 	}
@@ -151,7 +151,7 @@ form#login-form input[type="submit"]:hover {
 	}
 }
 
-@media screen and (max-width: 400px) {
+@media (max-width: 400px) {
 	#social_logins a:nth-child(1) img,
 	#social_logins a:nth-child(2) img {
 		height: 40px;
@@ -163,7 +163,7 @@ form#login-form input[type="submit"]:hover {
 	}
 }
 
-@media screen and (max-width: 350px) {
+@media (max-width: 350px) {
 	#social_logins a:nth-child(1) img,
 	#social_logins a:nth-child(2) img {
 		height: 35px;

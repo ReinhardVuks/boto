@@ -615,7 +615,7 @@ table.results tr th:last-child{
 
 /* Smaller screens */
 
-@media screen and (max-device-width: 1075px) {
+@media (max-width: 1075px) {
 	#learn .step img {
 		width: 60px;
 	}
@@ -647,7 +647,7 @@ table.results tr th:last-child{
 	}
 }
 
-@media screen and (max-device-width: 800px) {
+@media (max-width: 800px) {
 	.banner {
 		left:0;
 	    right:0;
@@ -686,7 +686,7 @@ table.results tr th:last-child{
 	}
 }
 
-@media screen and (max-device-width: 585px) {
+@media (max-width: 585px) {
 	#menu .size {
 		font-size: 12px;
 	}
@@ -729,7 +729,7 @@ table.results tr th:last-child{
 	}
 }
 
-@media screen and (max-device-width: 500px) {
+@media (max-width: 500px) {
 	.help-menu #alogo {
 		display: none;
 	}
@@ -743,7 +743,7 @@ table.results tr th:last-child{
 	}
 }
 
-@media screen and (max-device-width: 400px) {
+@media (max-width: 400px) {
 	#learn .step {
 		display: block;
 		margin: 0 0 20px 0;
@@ -796,7 +796,7 @@ table.results tr th:last-child{
 	}
 }
 
-@media screen and (max-device-width: 370px) {
+@media (max-width: 370px) {
 	#comps table {
 		width: 320px;
 		font-size: 10px;
@@ -808,7 +808,7 @@ table.results tr th:last-child{
 	}
 }
 
-@media screen and (max-device-width: 320px) {
+@media (max-width: 320px) {
 	#comps table {
 		width: 270px;
 		font-size: 10px;
@@ -820,7 +820,7 @@ table.results tr th:last-child{
 	}
 }
 
-@media screen and (max-device-width: 280px) {
+@media (max-width: 280px) {
 	.help-menu ul li {
 		padding: 10px;
 	}

@@ -85,7 +85,7 @@ session_start();
                 ?>
                 <a class="pink size" href="register.php">Registreeru</a>
                 <a class="blue size" href="create_competition.php">Loo ennustus</a>
-                <a class="yellow size" href="results.php">Edetabelid</a>
+                <a class="yellow size" href="#">Edetabelid</a>
                 <a class="purple size" href="competitions.php#myCompetitions">Minu ennustused</a>
                 <a class="green size" href="#">Minu profiil</a>
                 <div class="clearer"></div>
